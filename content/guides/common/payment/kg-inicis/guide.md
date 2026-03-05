@@ -4,7 +4,7 @@ description: "KG 이니시스 결제 연동 API 키 발급 방법"
 platform: "common"
 category: "결제"
 subcategory: "결제"
-order: 2
+order: 302
 status: "draft"
 updatedAt: "2026-03-04"
 tags: ["KG이니시스", "결제", "PG"]

@@ -4,7 +4,7 @@ description: "Kling AI API 키 발급 및 설정 방법"
 platform: "common"
 category: "LLM 모델 API 키"
 subcategory: "LLM API"
-order: 4
+order: 504
 status: "done"
 updatedAt: "2026-03-04"
 tags: ["Kling", "AI", "API키"]

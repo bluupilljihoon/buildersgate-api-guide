@@ -4,7 +4,7 @@ description: "Railway 계정 생성 및 카드 연결 방법"
 platform: "common"
 category: "배포 (카드 연결까지)"
 subcategory: "배포"
-order: 2
+order: 202
 status: "done"
 updatedAt: "2026-03-04"
 tags: ["Railway", "배포"]

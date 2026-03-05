@@ -4,7 +4,7 @@ description: "구글 플레이 개발자 계정 생성 방법 (법인 없으면 
 platform: "app"
 category: "개발자 계정 (법인 없으면 개인으로)"
 subcategory: "개발자 계정"
-order: 1
+order: 201
 status: "done"
 updatedAt: "2026-03-04"
 tags: ["구글", "Google Play", "개발자계정", "앱"]

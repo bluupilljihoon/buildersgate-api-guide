@@ -4,7 +4,7 @@ description: "Notion API Integration 생성 및 연동 방법"
 platform: "common"
 category: "기타"
 subcategory: "그 외"
-order: 1
+order: 631
 status: "done"
 updatedAt: "2026-03-04"
 tags: ["Notion", "API", "Integration"]

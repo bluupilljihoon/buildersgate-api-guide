@@ -4,7 +4,7 @@ description: "애플 개발자 계정 생성 방법"
 platform: "app"
 category: "개발자 계정 (법인 없으면 개인으로)"
 subcategory: "개발자 계정"
-order: 2
+order: 202
 status: "done"
 updatedAt: "2026-03-04"
 tags: ["애플", "Apple", "개발자계정", "앱"]

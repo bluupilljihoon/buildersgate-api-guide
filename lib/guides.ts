@@ -87,19 +87,47 @@ export function getGuideTree(): GuideTree[] {
       subMap.get(guide.subcategory)!.push(guide);
     }
 
-    const categories: GuideTreeNode[] = [];
+    const categoryNodes: Array<{ node: GuideTreeNode; minOrder: number }> = [];
 
     for (const [category, subMap] of categoryMap) {
-      const children: GuideTreeNode[] = [];
+      const subEntries = [...subMap.entries()];
+      const allGuides = subEntries.flatMap(([, gs]) => gs);
+      const minOrder = Math.min(...allGuides.map((g) => g.order));
 
-      for (const [subcategory, subGuides] of subMap) {
-        if (subGuides.length === 1 && category === subcategory) {
-          children.push({
-            label: subGuides[0].title,
-            slug: subGuides[0].slug,
-            status: subGuides[0].status,
+      // 서브카테고리가 하나뿐이면 중간 단계를 제거하고 가이드를 카테고리 바로 아래로 올림
+      // (기타처럼 서브카테고리가 여러 개인 경우는 유지)
+      const isFlattenable = subEntries.length === 1;
+
+      if (isFlattenable) {
+        const [, subGuides] = subEntries[0];
+        const sorted = subGuides.sort((a, b) => a.order - b.order);
+
+        if (sorted.length === 1) {
+          categoryNodes.push({
+            node: {
+              label: sorted[0].title,
+              slug: sorted[0].slug,
+              status: sorted[0].status,
+            },
+            minOrder,
           });
         } else {
+          categoryNodes.push({
+            node: {
+              label: category,
+              children: sorted.map((g) => ({
+                label: g.title,
+                slug: g.slug,
+                status: g.status,
+              })),
+            },
+            minOrder,
+          });
+        }
+      } else {
+        const children: GuideTreeNode[] = [];
+
+        for (const [subcategory, subGuides] of subMap) {
           children.push({
             label: subcategory,
             children: subGuides
@@ -111,22 +139,17 @@ export function getGuideTree(): GuideTree[] {
               })),
           });
         }
-      }
 
-      const isSingleLeaf =
-        children.length === 1 &&
-        !children[0].children &&
-        children[0].label === category;
-
-      if (isSingleLeaf) {
-        categories.push(children[0]);
-      } else {
-        categories.push({
-          label: category,
-          children,
+        categoryNodes.push({
+          node: { label: category, children },
+          minOrder,
         });
       }
     }
+
+    const categories = categoryNodes
+      .sort((a, b) => a.minOrder - b.minOrder)
+      .map(({ node }) => node);
 
     return {
       platform,

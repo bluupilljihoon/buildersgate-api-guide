@@ -4,7 +4,7 @@ description: "YouTube Data API 키 발급 방법"
 platform: "common"
 category: "기타"
 subcategory: "그 외"
-order: 2
+order: 632
 status: "done"
 updatedAt: "2026-03-04"
 tags: ["YouTube", "API", "Google"]

@@ -4,7 +4,7 @@ description: "구글 플레이와 앱스토어 출시 준비 가이드"
 platform: "app"
 category: "앱 출시"
 subcategory: "앱 출시"
-order: 2
+order: 302
 status: "draft"
 updatedAt: "2026-03-04"
 tags: ["앱출시", "구글", "애플", "스토어"]

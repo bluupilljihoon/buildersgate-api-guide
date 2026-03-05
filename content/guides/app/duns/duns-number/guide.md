@@ -4,7 +4,7 @@ description: "법인용 DUNS 번호 발급 방법"
 platform: "app"
 category: "던스 번호 (법인 있는 경우)"
 subcategory: "던스 번호"
-order: 1
+order: 101
 status: "done"
 updatedAt: "2026-03-04"
 tags: ["DUNS", "법인", "사업자등록증"]

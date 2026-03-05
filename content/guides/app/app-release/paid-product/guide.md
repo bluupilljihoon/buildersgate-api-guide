@@ -4,7 +4,7 @@ description: "구글 플레이와 앱스토어에 유료 상품 추가 방법"
 platform: "app"
 category: "앱 출시"
 subcategory: "앱 출시"
-order: 1
+order: 301
 status: "draft"
 updatedAt: "2026-03-04"
 tags: ["유료상품", "인앱결제", "구글", "애플"]

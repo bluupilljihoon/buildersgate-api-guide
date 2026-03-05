@@ -4,7 +4,7 @@ description: "GCP 계정 생성 및 카드 연결 방법"
 platform: "common"
 category: "배포 (카드 연결까지)"
 subcategory: "배포"
-order: 4
+order: 204
 status: "done"
 updatedAt: "2026-03-04"
 tags: ["GCP", "Google Cloud", "배포"]

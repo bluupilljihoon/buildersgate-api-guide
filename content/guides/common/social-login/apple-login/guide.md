@@ -4,7 +4,7 @@ description: "Apple Sign In 키 발급 및 연동 방법"
 platform: "common"
 category: "소셜 로그인 API 키"
 subcategory: "소셜 로그인"
-order: 4
+order: 404
 status: "draft"
 updatedAt: "2026-03-04"
 tags: ["애플", "Apple", "소셜로그인"]

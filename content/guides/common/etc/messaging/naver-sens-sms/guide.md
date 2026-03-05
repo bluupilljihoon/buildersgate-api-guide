@@ -4,7 +4,7 @@ description: "네이버 클라우드 SENS를 활용한 문자 발송 API 설정 
 platform: "common"
 category: "기타"
 subcategory: "메세징"
-order: 1
+order: 611
 status: "done"
 updatedAt: "2026-03-04"
 tags: ["네이버", "SENS", "문자", "SMS"]

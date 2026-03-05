@@ -4,7 +4,7 @@ description: "로젠택배 배송 조회 API 키 발급 방법"
 platform: "common"
 category: "기타"
 subcategory: "그 외"
-order: 3
+order: 633
 status: "done"
 updatedAt: "2026-03-04"
 tags: ["로젠택배", "배송", "API"]

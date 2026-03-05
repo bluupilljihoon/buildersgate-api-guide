@@ -4,7 +4,7 @@ description: "후이즈에서 도메인 구매 및 연결 방법"
 platform: "web"
 category: "도메인"
 subcategory: "도메인"
-order: 2
+order: 102
 status: "draft"
 updatedAt: "2026-03-04"
 tags: ["후이즈", "도메인"]

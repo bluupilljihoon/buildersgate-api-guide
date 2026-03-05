@@ -4,7 +4,7 @@ description: "토스페이먼츠 결제 연동을 위한 가맹점 신청 및 AP
 platform: "common"
 category: "결제"
 subcategory: "결제"
-order: 1
+order: 301
 status: "done"
 updatedAt: "2026-03-04"
 tags: ["토스페이먼츠", "결제", "PG"]

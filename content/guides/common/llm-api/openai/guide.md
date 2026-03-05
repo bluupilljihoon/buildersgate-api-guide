@@ -4,7 +4,7 @@ description: "OpenAI API 키 발급 및 설정 방법"
 platform: "common"
 category: "LLM 모델 API 키"
 subcategory: "LLM API"
-order: 1
+order: 501
 status: "done"
 updatedAt: "2026-03-04"
 tags: ["OpenAI", "GPT", "API키", "LLM"]

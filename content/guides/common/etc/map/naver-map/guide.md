@@ -4,7 +4,7 @@ description: "네이버 지도 API 키 발급 방법"
 platform: "common"
 category: "기타"
 subcategory: "지도"
-order: 2
+order: 602
 status: "draft"
 updatedAt: "2026-03-04"
 tags: ["네이버", "지도", "API"]

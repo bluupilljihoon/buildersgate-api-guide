@@ -4,7 +4,7 @@ description: "GitHub, Supabase, Vercel 계정 생성 및 카드 연결 방법"
 platform: "common"
 category: "배포 (카드 연결까지)"
 subcategory: "배포"
-order: 1
+order: 201
 status: "done"
 updatedAt: "2026-03-04"
 tags: ["GitHub", "Supabase", "Vercel", "배포"]

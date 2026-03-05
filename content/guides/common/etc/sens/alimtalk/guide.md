@@ -4,7 +4,7 @@ description: "SENS 알림톡용 설정 가이드"
 platform: "common"
 category: "기타"
 subcategory: "센스"
-order: 2
+order: 622
 status: "draft"
 updatedAt: "2026-03-04"
 tags: ["SENS", "알림톡"]
