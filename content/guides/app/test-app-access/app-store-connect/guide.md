@@ -2,8 +2,8 @@
 title: "App store connect"
 description: "App store connect에서 테스트앱에 접속하는 방법"
 platform: "app"
-category: "테스트앱 접속"
-subcategory: "테스트앱 접속"
+category: "IOS에서 테스트"
+subcategory: "IOS에서 테스트"
 order: 251
 status: "done"
 updatedAt: "2026-03-12"
