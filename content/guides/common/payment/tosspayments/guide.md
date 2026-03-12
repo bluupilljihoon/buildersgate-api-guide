@@ -1,9 +1,9 @@
 ---
-title: "토스페이먼츠 (신청 단계부터 키 발급까지)"
+title: "가입 및 키 발급"
 description: "토스페이먼츠 결제 연동을 위한 가맹점 신청 및 API 키 발급 방법"
 platform: "common"
 category: "결제"
-subcategory: "결제"
+subcategory: "토스페이먼츠 (신청 단계부터 키 발급까지)"
 order: 301
 status: "done"
 updatedAt: "2026-03-04"
