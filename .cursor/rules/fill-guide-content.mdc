@@ -1,0 +1,104 @@
+---
+description: 가이드 내용 채우기 - 이미지 파일명에서 단계 텍스트를 추출해 guide.md 작성
+globs: content/guides/**/*.md
+alwaysApply: false
+---
+
+# 가이드 내용 채우기
+
+유저가 이미지만 첨부하면 이미지 파일명에서 단계 텍스트를 추출해 guide.md를 자동 작성한다.
+
+## 프롬프트 형식
+
+유저는 아래처럼 이미지만 첨부해서 요청한다. `# 내용` 섹션은 없다.
+
+```
+'앱' - '빌더 초대' - '애플 개발자' 내용을 채울거야.
+[이미지 첨부]
+```
+
+이미지 파일명 형식: `{번호}.{단계 설명}-{uuid}.png`
+- 번호가 순서, 번호 뒤의 텍스트(`.` 이후, `-{uuid}` 이전)가 단계 설명
+
+예: `1.앱 스토어 커넥트에서 사용자 및 액세스 클릭-abc123.png` → 1단계 텍스트: `앱 스토어 커넥트에서 사용자 및 액세스 클릭`
+
+## 작업 순서
+
+### 1. 이미지 파일명에서 단계 텍스트 추출
+- 첨부된 이미지 파일명을 번호 순으로 정렬
+- 각 파일명에서 `{번호}.` 이후, `-{uuid}.png` 이전 텍스트를 단계 설명으로 사용
+- uuid 패턴: 파일명 끝의 `-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` 부분 제거
+
+### 2. 대상 guide.md 파일 확인
+- 경로: `content/guides/{platform}/{category-slug}/{item-slug}/guide.md`
+- frontmatter(title, platform, category, subcategory, order, tags 등) 확인
+
+### 3. 이미지 복사
+- 첨부된 이미지를 번호 순서대로 `step1.png`, `step2.png`, ... 로 이름을 바꿔 복사
+- 저장 경로: `public/images/guides/{slug}/`
+- 예: `public/images/guides/app/builder-invite/apple-developer/step1.png`
+
+### 4. guide.md 작성
+
+**frontmatter:**
+- 기존 frontmatter 유지 (title, platform, category 등 변경 금지)
+- `status`를 `"done"`으로 변경
+- `updatedAt`을 오늘 날짜로 업데이트
+
+**본문 구조:**
+```markdown
+## 1단계: {이미지 1번 파일명에서 추출한 텍스트}
+
+![{단계 설명}](step1.png)
+
+## 2단계: {이미지 2번 파일명에서 추출한 텍스트}
+
+![{단계 설명}](step2.png)
+```
+
+- 헤딩은 `## N단계: {단계 설명}` 형식
+- 이미지 alt 텍스트는 헤딩 설명과 동일하게 작성
+
+### 5. 완료 후 배포
+가이드 내용 작성 완료 후 자동으로:
+1. `git add . && git commit` (커밋 메시지: `feat: {항목명} 가이드 내용 추가`)
+2. `git push origin main`
+3. `npx vercel --prod`
+
+단, 유저가 "배포는 나중에" 혹은 "푸쉬만" 등으로 제한하면 그에 따른다.
+
+## 예시
+
+**첨부 이미지 파일명:**
+```
+1.앱 스토어 커넥트에서 사용자 및 액세스 클릭-1f9f01bb-9ba2-4882-880f-e423fa2e297e.png
+2.파란색 + 버튼 클릭-c070f073-6c58-4310-a4d4-e06a0bdd747a.png
+3.이름, 이메일, 역할 입력 및 관리자 체크 후 다음 클릭-74b4b451-8c15-4fe6-a072-2711376516e4.png
+4.초대 클릭-419a3652-02db-497d-81cf-c8fd88dbae1f.png
+```
+
+**출력 guide.md:**
+```markdown
+---
+title: "애플 개발자"
+...
+status: "done"
+updatedAt: "2026-03-09"
+---
+
+## 1단계: 앱 스토어 커넥트에서 사용자 및 액세스 클릭
+
+![앱 스토어 커넥트에서 사용자 및 액세스 클릭](step1.png)
+
+## 2단계: 파란색 + 버튼 클릭
+
+![파란색 + 버튼 클릭](step2.png)
+
+## 3단계: 이름, 이메일, 역할 입력 및 관리자 체크 후 다음 클릭
+
+![이름, 이메일, 역할 입력 및 관리자 체크 후 다음 클릭](step3.png)
+
+## 4단계: 초대 클릭
+
+![초대 클릭](step4.png)
+```
