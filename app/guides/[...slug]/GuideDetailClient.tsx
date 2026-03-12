@@ -46,6 +46,37 @@ export default function GuideDetailClient({
 
         <GuideContent content={guide.content} slug={guide.slug} />
 
+        {guide.attachments && guide.attachments.length > 0 && (
+          <div className="mt-10 pt-6 border-t border-border-color">
+            <h3 className="text-sm font-semibold text-muted mb-3">첨부파일</h3>
+            <div className="flex flex-col gap-2">
+              {guide.attachments.map((attachment) => (
+                <a
+                  key={attachment.file}
+                  href={attachment.file}
+                  download
+                  className="inline-flex items-center gap-2.5 w-fit px-4 py-2.5 rounded-lg border border-border-color bg-sidebar-bg hover:bg-primary/5 hover:border-primary/40 transition-colors text-sm text-foreground/80 hover:text-primary group"
+                >
+                  <svg
+                    className="w-4 h-4 text-muted group-hover:text-primary transition-colors shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h4a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"
+                    />
+                  </svg>
+                  {attachment.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+
         <nav className="mt-12 pt-6 border-t border-border-color flex items-center justify-between gap-4">
           {prevGuide ? (
             <Link

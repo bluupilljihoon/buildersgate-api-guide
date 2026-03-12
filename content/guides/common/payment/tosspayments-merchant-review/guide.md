@@ -8,6 +8,9 @@ order: 302
 status: "done"
 updatedAt: "2026-03-12"
 tags: ["토스페이먼츠", "결제", "가맹점 심사", "결제경로"]
+attachments:
+  - label: "결제경로 제작 가이드 PDF"
+    file: "/files/tosspayments-merchant-review.pdf"
 ---
 
 ## 들어가기 전에

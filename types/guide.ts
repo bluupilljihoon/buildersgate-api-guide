@@ -1,3 +1,8 @@
+export interface GuideAttachment {
+  label: string;
+  file: string;
+}
+
 export interface GuideMeta {
   title: string;
   description: string;
@@ -8,6 +13,7 @@ export interface GuideMeta {
   status: "done" | "draft";
   updatedAt: string;
   tags: string[];
+  attachments?: GuideAttachment[];
 }
 
 export interface Guide extends GuideMeta {
