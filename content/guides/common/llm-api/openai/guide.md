@@ -21,8 +21,16 @@ OpenAI API를 사용하기 위한 키 발급 방법을 안내합니다.
 ## 2단계: API 키 발급
 
 1. 로그인 후 **API Keys** 메뉴로 이동합니다.
-2. **Create new secret key**를 클릭합니다.
-3. 키 이름을 입력하고 생성합니다.
+
+![로그인 후 API Keys 메뉴로 이동합니다](step1.png)
+
+2\. **Create new secret key**를 클릭합니다.
+
+![Create new secret key를 클릭합니다](step2.png)
+
+3\. 키 이름을 입력하고 생성합니다.
+
+![키 이름을 입력하고 생성합니다](step3.png)
 
 > 키는 생성 직후에만 확인 가능하므로 반드시 안전한 곳에 복사해 두세요.
 
